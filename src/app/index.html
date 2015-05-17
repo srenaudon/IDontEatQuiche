@@ -1,6 +1,16 @@
 <!DOCTYPE html>
 <html>
 <head><title>Unreal Programmers</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+
+
+    <script src="lib/bower_components/jquery/dist/jquery.js"></script>
+    <script src="lib/bower_components/pixi.js/bin/pixi.js"></script>
+
+    <script src="js/withMesh.js"></script>
+
     <style> body {
         margin: 0;
     }
@@ -11,55 +21,28 @@
     } </style>
 </head>
 <body>
-<script src="lib/threejs/three.js"></script>
-<script> var scene = new THREE.Scene();
-var camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-var renderer = new THREE.WebGLRenderer();
-renderer.setSize(window.innerWidth, window.innerHeight);
-document.body.appendChild(renderer.domElement);
-var geometry = new THREE.BoxGeometry(1, 1, 1);
-var material = new THREE.MeshBasicMaterial({color: 0x00ff00});
-var cube = new THREE.Mesh(geometry, material);
-scene.add(cube);
-camera.position.z = 5;
+<p>FPS=<span id="fps"></span></p>
+<div id="view"></div>
 
-var material = new THREE.LineBasicMaterial({
-    color: 0x0000ff
-});
-
-
-var rectLength = 3, rectWidth = 3;
-
-
-var bound = 1000;
-for (var i=0;i<bound;i++) {
-
-    var rectShape = new THREE.Shape();
-    rectShape.moveTo( i/bound,i/bound );
-    rectShape.lineTo( i/bound, rectWidth+(i/bound) );
-    rectShape.lineTo( rectLength+(i/bound), rectWidth+(i/bound) );
-    rectShape.lineTo( rectLength+(i/bound),i/bound );
-    rectShape.lineTo( i/bound, i/bound );
-
-
-    var rectGeom = new THREE.ShapeGeometry( rectShape );
-    var rectMesh = new THREE.Mesh( rectGeom, new THREE.MeshBasicMaterial( { color: 0xff0000 } ) ) ;
-
-    scene.add( rectMesh );
-
-
-}
+<script>
 
 
 
 
-var render = function () {
-    requestAnimationFrame(render);
-    cube.rotation.x += 0.1;
-    cube.rotation.y += 0.1;
-    renderer.render(scene, camera);
-};
-render(); </script>
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
 </body>
 </html>
 

@@ -2,6 +2,8 @@
   "name": "IDontEatQuiche",
   "version": "0.0.1",
   "dependencies": {
-    "d3": "3.5.5"
+    "d3": "3.5.5",
+    "pixi.js": "~3.0.3",
+    "jquery": "~2.1.4"
   }
 }
